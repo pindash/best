@@ -66,7 +66,7 @@ class BestModel(ABC):
         """
 
         kwargs['tune'] = kwargs.get('tune', 1000)
-        kwargs['nuts_kwargs'] = kwargs.get('nuts_kwargs', {'target_accept': 0.90})
+        kwargs['target_accept'] = kwargs.get('nuts_kwargs', {'target_accept': 0.90})['target_accept']
         max_rounds = 2
         for r in range(max_rounds):
             with self.model:
